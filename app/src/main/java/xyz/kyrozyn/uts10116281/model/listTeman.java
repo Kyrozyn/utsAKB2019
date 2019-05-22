@@ -31,11 +31,25 @@ public class listTeman {
     }
     public boolean modify(Teman x,Teman y){
         if(list.contains(x)){
-            delete(x);
-            add(y);
-            return true;
+            if(delete(x)){
+                Log.d("tag","Modify : Delete x '"+x.getNim()+"' berhasil dihapus!");
+                if(add(y)){
+                    Log.d("tag","Modify : Add y '"+y.getNim()+"' berhasil ditambahkan!");
+                    return true;
+                }
+                else{
+                    Log.d("tag","Modify : Add y '"+y.getNim()+"' gagal ditambahkan!");
+                    return false;
+                }
+            }
+            else{
+                Log.d("tag","Modify : Delete x '"+x.getNim()+"' gagal dihapus!");
+                return false;
+            }
+
         }
         else{
+            Log.d("tag","Modify : contains x '"+x.getNim()+"' tidak ditemukan?");
             return false;
         }
     }
