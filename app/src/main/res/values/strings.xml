@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aplikasi UTS 10116281</string>
+    <string name="home">Home</string>
+    <string name="profil">Profil</string>
+    <string name="kontak">Kontak</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
+</resources>
