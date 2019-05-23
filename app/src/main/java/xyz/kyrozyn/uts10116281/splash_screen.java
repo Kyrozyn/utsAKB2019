@@ -11,7 +11,11 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import xyz.kyrozyn.uts10116281.presenter.dummyPresenter;
+import xyz.kyrozyn.uts10116281.presenter.kontakPresenter;
+
 public class splash_screen extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,4 +34,6 @@ public class splash_screen extends AppCompatActivity {
         int time = 3000;
         new Handler().postDelayed(r, time);
     }
+
+
 }

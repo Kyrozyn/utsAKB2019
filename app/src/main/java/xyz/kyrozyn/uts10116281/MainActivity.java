@@ -14,14 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+
+import xyz.kyrozyn.uts10116281.presenter.dummyPresenter;
 import xyz.kyrozyn.uts10116281.view.viewPagerAdapter;
-import xyz.kyrozyn.uts10116281.view.homeFragment;
 import xyz.kyrozyn.uts10116281.view.kontakFragment;
+import xyz.kyrozyn.uts10116281.view.daftarTemanFragment;
 import xyz.kyrozyn.uts10116281.view.profilFragment;
 
 public class MainActivity extends AppCompatActivity  {
     private ViewPager pager;
     MenuItem prevMenuItem;
+    dummyPresenter d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
@@ -61,13 +64,13 @@ public class MainActivity extends AppCompatActivity  {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.home_menu:
+                            case R.id.Profil:
                                 pager.setCurrentItem(0);
                                 break;
-                            case R.id.kontak:
+                            case R.id.daftar_teman:
                                 pager.setCurrentItem(2);
                                 break;
-                            case R.id.profil_menu:
+                            case R.id.kontak:
                                 pager.setCurrentItem(1);
                                 break;
                         }
@@ -79,13 +82,14 @@ public class MainActivity extends AppCompatActivity  {
 
     private void setupViewPager(ViewPager viewPager) {
         viewPagerAdapter viewPagerAdapter = new viewPagerAdapter(getSupportFragmentManager());
-        Fragment homeFragment = new homeFragment();
-        Fragment kontakFragment = new kontakFragment();
         Fragment profilFragment = new profilFragment();
-        viewPagerAdapter.addFragment(homeFragment);
+        Fragment daftarTemanFragment = new daftarTemanFragment();
+        Fragment kontakFragment = new kontakFragment();
         viewPagerAdapter.addFragment(profilFragment);
         viewPagerAdapter.addFragment(kontakFragment);
+        viewPagerAdapter.addFragment(daftarTemanFragment);
         viewPager.setAdapter(viewPagerAdapter);
     }
+
 }
 
