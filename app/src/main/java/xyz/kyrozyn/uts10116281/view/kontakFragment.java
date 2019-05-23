@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import xyz.kyrozyn.uts10116281.R;
+import xyz.kyrozyn.uts10116281.model.Teman;
 import xyz.kyrozyn.uts10116281.presenter.kontakPresenter;
 
 public class kontakFragment extends Fragment {
@@ -28,8 +29,13 @@ public class kontakFragment extends Fragment {
         kontakPresenter pre = new kontakPresenter();
         String a = pre.testTambahTeman();
         TextView t = view.findViewById(R.id.tv_home);
-        Log.d("tag","STRING A = "+a);
+//        Log.d("tag","STRING A = "+a);
         t.setText(a);
+
+        Teman[] teman = pre.TampilSemua();
+        for (Teman b : teman) {
+            Log.d("tag","Teman = "+b.getNim());
+        }
         return view;
     }
 }

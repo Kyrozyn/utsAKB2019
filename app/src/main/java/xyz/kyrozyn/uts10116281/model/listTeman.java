@@ -11,9 +11,9 @@ import java.util.LinkedList;
 
 
 public class listTeman {
-    private LinkedList list;
+    private LinkedList<Teman> list;
     public listTeman(){
-        list = new LinkedList();
+        list = new LinkedList<>();
     }
     public boolean add(Teman teman){
         if (list.add(teman)){
@@ -49,5 +49,10 @@ public class listTeman {
     }
     public Teman getLast(){
         return (Teman) list.getLast();
+    }
+
+    public Teman[] getAll(){
+        Teman[] teman = new Teman[list.size()];
+        return list.toArray(teman);
     }
 }
