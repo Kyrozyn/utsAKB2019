@@ -7,6 +7,7 @@ Dibuat : 21-05-2019
 package xyz.kyrozyn.uts10116281.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,14 +26,16 @@ import xyz.kyrozyn.uts10116281.model.Teman;
 import xyz.kyrozyn.uts10116281.presenter.dummyPresenter;
 
 public class daftarTemanFragment extends Fragment {
+    private dummyPresenter pre;
     @Nullable
     @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view;
         ArrayList<String> ar = new ArrayList();
         view = inflater.inflate(R.layout.fragment_daftarteman, container, false);
 
-        dummyPresenter pre = new dummyPresenter();
+        pre = new dummyPresenter();
         for (Teman t: pre.TampilSemua()) {
             ar.add(t.getNama());
         }

@@ -55,4 +55,8 @@ public class listTeman {
         Teman[] teman = new Teman[list.size()];
         return list.toArray(teman);
     }
+
+    public Teman getint(int i){
+        return list.get(i);
+    }
 }
