@@ -23,10 +23,11 @@ public class kontakFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_kontak, container, false);
+        View view;
+        view = inflater.inflate(R.layout.fragment_kontak, container, false);
         kontakPresenter pre = new kontakPresenter();
         String a = pre.testTambahTeman();
-        TextView t = (TextView) view.findViewById(R.id.tv_home);
+        TextView t = view.findViewById(R.id.tv_home);
         Log.d("tag","STRING A = "+a);
         t.setText(a);
         return view;

@@ -4,7 +4,7 @@ import xyz.kyrozyn.uts10116281.model.Teman;
 import xyz.kyrozyn.uts10116281.model.listTeman;
 
 public class kontakPresenter {
-    listTeman list;
+    private listTeman list;
     public kontakPresenter(){
         list = new listTeman();
     }

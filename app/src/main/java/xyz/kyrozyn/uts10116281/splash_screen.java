@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class splash_screen extends AppCompatActivity {
-    private int time = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +27,7 @@ public class splash_screen extends AppCompatActivity {
                 finish();
             }
         };
-        new Handler().postDelayed(r,time);
+        int time = 3000;
+        new Handler().postDelayed(r, time);
     }
 }
