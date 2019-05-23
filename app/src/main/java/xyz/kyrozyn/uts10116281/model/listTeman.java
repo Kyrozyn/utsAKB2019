@@ -7,12 +7,11 @@ Dibuat : 21-05-2019
 package xyz.kyrozyn.uts10116281.model;
 
 import android.util.Log;
-
 import java.util.LinkedList;
 
 
 public class listTeman {
-    LinkedList list;
+    private LinkedList list;
     public listTeman(){
         list = new LinkedList();
     }
@@ -27,33 +26,28 @@ public class listTeman {
         }
     }
     public boolean delete(Teman teman){
-        return list.remove(teman);
-    }
-    public boolean modify(Teman x,Teman y){
-        if(list.contains(x)){
-            if(delete(x)){
-                Log.d("tag","Modify : Delete x '"+x.getNim()+"' berhasil dihapus!");
-                if(add(y)){
-                    Log.d("tag","Modify : Add y '"+y.getNim()+"' berhasil ditambahkan!");
-                    return true;
-                }
-                else{
-                    Log.d("tag","Modify : Add y '"+y.getNim()+"' gagal ditambahkan!");
-                    return false;
-                }
-            }
-            else{
-                Log.d("tag","Modify : Delete x '"+x.getNim()+"' gagal dihapus!");
-                return false;
-            }
-
+        if(list.remove(teman)){
+            Log.d("tag","Teman = "+teman.getNim()+" Berhasil di dihapus");
+            return true;
         }
         else{
-            Log.d("tag","Modify : contains x '"+x.getNim()+"' tidak ditemukan?");
+            Log.d("tag","Teman = "+teman.getNim()+" gagal di dihapus");
             return false;
         }
     }
-    public Teman get(){
-        return (Teman) list.getFirst();
+    public boolean modify(Teman x,Teman y){
+        if(list.contains(x)){
+            int index = list.indexOf(x);
+            Teman t = (Teman)list.set(index, y);
+            Log.d("tag","List "+ t.getNim()+" berhasil diubah");
+            return true;
+        }
+        else{
+            Log.d("tag","List gagal diubah");
+            return false;
+        }
+    }
+    public Teman getLast(){
+        return (Teman) list.getLast();
     }
 }

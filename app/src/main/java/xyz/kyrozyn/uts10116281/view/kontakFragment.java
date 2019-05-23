@@ -26,8 +26,7 @@ public class kontakFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_kontak, container, false);
         kontakPresenter pre = new kontakPresenter();
         String a = pre.testTambahTeman();
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        TextView t = (TextView) root.findViewById(R.id.tv_home);
+        TextView t = (TextView) view.findViewById(R.id.tv_home);
         Log.d("tag","STRING A = "+a);
         t.setText(a);
         return view;
